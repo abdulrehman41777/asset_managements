@@ -22,12 +22,16 @@ const Signup = () => {
     console.log({ fullname,  email, password });
   };
 
+  const handleGoogleSignIn = () => {
+    window.location.href = "https://accounts.google.com/signin";
+  }
+
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="grid sm:grid-cols-12 gap-4 w-full h-full bg-white">
         {/* Left Column */}
         <div className="hidden sm:flex items-center justify-center sm:col-span-7">
-          <img src="/assest/left.png" alt="left" className="w-full h-full object-cover " />
+          <img src="/images/leftlock.png" alt="left" className="w-full h-full object-cover " />
         </div>
 
 
@@ -132,7 +136,7 @@ const Signup = () => {
                   type="checkbox"
                   checked={agreeTerms}
                   onChange={() => setAgreeTerms(!agreeTerms)}
-                  className="w-4 h-4 accent-[#A67271]  text-[#14553E] border-gray-300 rounded focus:ring-[#A67271]"
+                  className="w-4 h-4 accent-[#14553E]  text-[#14553E] border-gray-300 rounded focus:ring-[#A67271]"
                 />
                 <label className="ml-2 text-[14px] text-gray-700">
                   I agree with the{" "}
@@ -143,24 +147,41 @@ const Signup = () => {
               </div>
 
               {/* Submit Button */}
-              <Link href="/basic">
+              <Link href="/dashboard">
                 <button
                   type="submit"
-                  className="w-full bg-[#14553E] text-white py-3 rounded"
+                  className="w-full bg-[#14553E] text-white py-3 rounded hover:bg-[#14553E] transition duration-200 mb-20"
                 >
                   Sign Up
                 </button></Link>
 
+                <div className="relative">
+      <button
+        onClick={handleGoogleSignIn}
+        className="w-full h-[48px] pl-[40px] pr-4 border border-[#14553E] focus:outline-none focus:ring-2 focus:ring-[#14553E] flex items-center justify-center"
+      >
+        <img
+          src="/images/google.png"
+          alt="Google Icon"
+          className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4"
+        />
+        Sign in with Google
+      </button>
+    </div>
+
 
               {/* Already Have Account */}
               <div className="pt-4 text-center">
-                <p className="text-[14px]" handleSignup>
+                <p className="text-[14px]" onClick={handleSignup} >
                   Already have an account?{" "}
                   <Link href="/SignPage" className="text-[#14553E]">
                     Sign In
                   </Link>
                 </p>
+                
               </div>
+
+              
             </form>
           </div>
         </div>
