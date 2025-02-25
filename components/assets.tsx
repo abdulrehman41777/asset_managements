@@ -15,7 +15,7 @@ const Asset = () => {
       {/* Sidebar */}
       <Sidebar />
 
-      {/* Main Content */}
+
       <div className="flex-1 p-6">
         <h1 className="text-2xl font-bold mb-4">Assets</h1>
 
@@ -23,20 +23,20 @@ const Asset = () => {
           {categories.map((category) => (
             <div
               key={category.id}
-              className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center border hover:border-blue-500"
+              className="bg-white p-6  shadow-md flex flex-col items-center border   hover:border-[#14553E]"
             >
               <Image
                 src={category.imageSrc}
                 alt={category.title}
-                width={100}
-                height={100}
+                width={120}
+                height={180}
                 className="rounded-full"
               />
-              <h2 className="text-[20px] font-semibold mt-2">{category.title}</h2>
-              <button className="mt-2 bg-green-800 text-white px-4 py-2 rounded">
+              <h2 className="text-[15px] font-[Inter] font-semibold mt-2">{category.title}</h2>
+              <button className="mt-2 text-[12px]  bg-[#14553E] Font-[Inter] font-normal text-white px-4  py-2 ">
                 View Assets
               </button>
-            </div>
+            </div>  
           ))}
         </div>
       </div>

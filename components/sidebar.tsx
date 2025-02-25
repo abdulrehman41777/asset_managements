@@ -1,15 +1,16 @@
 'use client';
-import Image from 'next/image'
-import React, { useState } from 'react'
+import Image from 'next/image';
+import React, { useState } from 'react';
 import { RxDashboard } from "react-icons/rx";
 import SidebarItem from './sidebar-items';
 import { TbAssetFilled } from "react-icons/tb";
 import { BsFillTicketFill } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
-
+import { FiMenu, FiX } from "react-icons/fi"; 
 
 const Sidebar: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [isOpen, setIsOpen] = useState(false); 
 
   const handleClick = (index: number) => {
     setActiveIndex(index);
@@ -17,21 +18,38 @@ const Sidebar: React.FC = () => {
 
   const items = [
     { label: 'Dashboard', icon: <RxDashboard className='text-[#868E96] w-[18px] h-[18px]' /> },
-    { label: 'Assets', icon: <TbAssetFilled className='text-[#868E96] w-[18px] h-[18px] ' /> },
-    { label: 'Tickets', icon: <BsFillTicketFill className='text-[#868E96] w-[18px] h-[18px] ' /> },
-    { label: 'Audience', icon: <IoPersonOutline className='text-[#868E96] w-[18px] h-[18px] ' /> },
+    { label: 'Assets', icon: <TbAssetFilled className='text-[#868E96] w-[18px] h-[18px]' /> },
+    { label: 'Tickets', icon: <BsFillTicketFill className='text-[#868E96] w-[18px] h-[18px]' /> },
+    { label: 'Audience', icon: <IoPersonOutline className='text-[#868E96] w-[18px] h-[18px]' /> },
   ];
 
   return (
     <>
-      <div className=' w-[285px] h-dvh bg-[#fff] relative '>
-        <div className=' px-2 py-4 '>
-          <div className=' border-[#000] flex justify-center items-center'>
-            <Image src="/images/logo.png" alt='logo' width={187} height={135} />
+     
+      <button 
+        onClick={() => setIsOpen(!isOpen)} 
+        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-gray-200 rounded-full"
+      >
+        {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+      </button>
+
+    
+      <div className={`
+        fixed top-0 left-0 h-screen bg-white shadow-lg w-[285px] 
+        transition-transform duration-300 flex flex-col
+        ${isOpen ? "translate-x-0" : "-translate-x-full"} 
+        md:translate-x-0 md:relative md:block
+      `}>
+        
+        <div className="flex flex-col h-full px-4 py-6">
+        
+          <div className="flex justify-center items-center">
+            <Image src="/images/logo.png" alt="logo" width={187} height={135} />
           </div>
-          <div className=' py-4'>
-            <ul className=''>
-              {/* <li className='flex items-center gap-3 border border-[#000] py-3 px-2 rounded-[6px] text-[16px] text-[#343A40] font-[600] my-4 hover:bg-[#E3E3E3] focus:bg-[#E3E3E3] focus:fixed  cursor-pointer transition-all duration-300 ease-in-out'><RxDashboard className='text-[#868E96] w-[18px] h-[18px]' />Dashboard</li> */}
+
+     
+          <div className="flex-grow mt-6">
+            <ul className="space-y-4">
               {items.map((item, index) => (
                 <SidebarItem
                   key={index}
@@ -45,19 +63,26 @@ const Sidebar: React.FC = () => {
             </ul>
           </div>
 
-          <button type='button' className=' flex items-center gap-4 absolute bottom-10 left-6 py-3 px-2 cursor-pointer'>
-            <div>
-              <Image src="/images/logout.png" alt='logout' width={18} height={20} />
-            </div>
-            <h1 className='text-[16px] text-[#343A40] font-[600]'>Logout</h1>
+    
+          <button 
+            type="button" 
+            className="flex items-center gap-4 py-3 px-4 mb-6"
+          >
+            <Image src="/images/logout.png" alt="logout" width={18} height={20} />
+            <h1 className="text-[16px] text-[#343A40] font-[600]">Logout</h1>
           </button>
         </div>
-
-
       </div>
+
+     
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
     </>
-  )
+  );
 }
 
-export default Sidebar
-
+export default Sidebar;

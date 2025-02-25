@@ -2,7 +2,8 @@
 import React, { useState } from 'react'
 import Assets from '@/components/assets'
 import Sidebar from '@/components/sidebar'
-import Mlayout from '../Layout/Mlayout'
+import Mlayout from '@/layout/Mlayout'
+
 
 const page = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true); 
@@ -11,9 +12,10 @@ const page = () => {
   return (
    
    <>
-  
+ <Assets/>
  
-  <Assets/> 
+ 
+
         
    </>
 
