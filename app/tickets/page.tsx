@@ -53,19 +53,19 @@ const TicketTable = () => {
   
       <div className="flex-1 md:ml-[285px] p-6">
      
-        <button
-          onClick={() => setSidebarOpen(true)}
-          className="md:hidden mb-4 p-2 bg-green-600 text-white rounded-md flex items-center"
-        >
-          <Menu className="w-6 h-6 mr-2" />
-        
-        </button>
+          {/* <button
+            onClick={() => setSidebarOpen(true)}
+            className="md:hidden mb-4 p-2 bg-green-600 text-white rounded-md flex items-center"
+          >
+            <Menu className="w-6 h-6 mr-2" />
+          
+          </button> */}
 
         <div className="bg-white shadow-lg rounded-lg p-6">
        
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-xl font-semibold text-gray-800">All Tickets</h1>
-            <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md">
+            <h1 className="text-xl font-semibold font-[outfit] text-[#212529]   ">All Tickets</h1>
+            <button className="bg-[#14553E] hover:bg-[#14553E] font-[Inter] font-medium text-white px-4 py-2 text-[12px] ">
               + Add Ticket
             </button>
           </div>
@@ -76,12 +76,12 @@ const TicketTable = () => {
        
               <thead>
                 <tr className="bg-gray-100 text-left text-gray-600 uppercase text-sm border-b">
-                  <th className="px-4 py-3">Ticket Number</th>
-                  <th className="px-4 py-3">Ticket Name</th>
-                  <th className="px-4 py-3">Assigned To</th>
-                  <th className="px-4 py-3">Status</th>
-                  <th className="px-4 py-3">Time</th>
-                  <th className="px-4 py-3">Description</th>
+                  <th className="px-4 py-3 font-medium text-[12px]">Ticket Number</th>
+                  <th className="px-4 py-3 font-medium text-[12px]">Ticket Name</th>
+                  <th className="px-4 py-3 font-medium text-[12px]">Assigned To</th>
+                  <th className="px-4 py-3 font-medium text-[12px]">Status</th>
+                  <th className="px-4 py-3 font-medium text-[12px]">Time</th>
+                  <th className="px-4 py-3 font-medium text-[12px]  ">Description</th>
                 </tr>
               </thead>
 
@@ -89,16 +89,16 @@ const TicketTable = () => {
               <tbody>
                 {tickets.map((ticket, index) => (
                   <tr key={index} className="text-gray-700 hover:bg-gray-50 transition">
-                    <td className="px-4 py-3">{ticket.id}</td>
-                    <td className="px-4 py-3 font-semibold">{ticket.name}</td>
-                    <td className="px-4 py-3">{ticket.assigned}</td>
+                    <td className="px-4 py-3  font-[Inter] font-normal text-[14px]  ">{ticket.id}</td>
+                    <td className="px-4 py-3 font-semibold  font-[Inter] text-[14px]  ">{ticket.name}</td>
+                    <td className="px-4 py-3  font-[Inter] font-normal text-[14px]  text-[#495057]   ">{ticket.assigned}</td>
                     <td className="px-4 py-3">
-                      <span className="px-3 py-1 text-xs font-semibold text-green-600 bg-green-100 rounded-full">
+                      <span className="px-3 py-1 text-xs border-[1px] font-medium font-[Inter] text-[#2B8A3E] bg-green-100 rounded-[5px]">
                         {ticket.status}
                       </span>
                     </td>
-                    <td className="px-4 py-3">{ticket.time}</td>
-                    <td className="px-4 py-3 text-gray-500">{ticket.description}</td>
+                    <td className="px-4 py-3 font-[Inter] font-normal text-[14px]  ">{ticket.time}</td>
+                    <td className="px-4 py-3 text-[#212529]  font-[Inter] font-medium text-[14px]  ">{ticket.description}</td>
                   </tr>
                 ))}
               </tbody>
