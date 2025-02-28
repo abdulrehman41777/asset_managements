@@ -13,8 +13,8 @@ const TotalAssets = () => {
                         </div>
                         <HiOutlineDotsVertical className='text-[#ADB5BD] w-[20px] h-[20px]' />
                     </div>
-                    <div className=' border-[#000]'>
-                        <h3 className='text-[#495057] text-[14px] font-[500]'>Total Assets</h3>
+                    <div className=' border-[#000]  font-[Inter] '>
+                        <h3 className='text-[#495057] text-[14px] font-[Inter] font-[500]'>Total Assets</h3>
                         <div className='flex justify-between items-center'>
                             <h1 className='text-[#212529] text-[36px] font-[600]'>983</h1>
                             <div className='border border-[#D3F9D8] w-[71px] h-[24px] bg-[#ECFDF3] flex items-center px-[10px] gap-1'>
