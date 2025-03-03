@@ -9,7 +9,7 @@ const MainAssetsCards = () => {
     <div className=' flex justify-between gap-6'>
         <TotalAssets/>
         <TicketRaised/>
-        <TotalEmployee/>
+        <TotalEmployee/>  
     </div>
     </>
   )
