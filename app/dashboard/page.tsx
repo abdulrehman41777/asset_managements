@@ -51,14 +51,14 @@ const Page = () => {
         <div className='flex'>
             {/* Sidebar */}
             <div className={`fixed h-full transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-                <Sidebar />
+                
             </div>
 
             {/* Main Content */}
-            <div className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'ml-72' : 'ml-0'}`}>
+            <div className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'ml' : 'ml-0'}`}>
                 <div className=' w-full'>
                     <div className='w-full'>
-                        <DashboardHeader toggleSidebar={toggleSidebar} />
+                        <DashboardHeader/>
                     </div>
                     <div className='my-10 mx-8'>
                         <MainContent/>

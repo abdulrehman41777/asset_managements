@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Assets from '@/components/assets'
 import Sidebar from '@/components/sidebar'
 import Mlayout from '@/layout/Mlayout'
+import DashboardHeader from '@/components/dashboard-header'
 
 
 const page = () => {
@@ -12,7 +13,14 @@ const page = () => {
   return (
    
    <>
- <Assets/>
+
+  
+     <DashboardHeader/>
+    
+      <Assets/>
+   
+   
+
  
  
 

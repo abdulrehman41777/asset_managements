@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Sidebar from "./sidebar";
 import { motion } from "framer-motion";
+import DashboardHeader from "./dashboard-header";
 
 const categories = [
   { id: 1, title: "ELECTRONICS", imageSrc: "/images/asset.png" },
@@ -14,6 +15,7 @@ const Asset = () => {
   return (
     <div className="flex min-h-screen overflow-auto bg-gray-100">
       <Sidebar />
+    
       <div className="flex-1 p-6">
         <h1 className="text-2xl font-bold mb-4">Assets</h1>
 
