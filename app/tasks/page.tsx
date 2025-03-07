@@ -15,7 +15,7 @@ const page = () => {
    <>
 
   
-     <DashboardHeader/>
+
     
       <Assets/>
    

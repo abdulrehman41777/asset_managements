@@ -49,7 +49,7 @@ const Page = () => {
 
     return (
         <div className='flex'>
-            {/* Sidebar */}
+          <Sidebar/>
             <div className={`fixed h-full transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 
             </div>
