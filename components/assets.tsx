@@ -6,11 +6,11 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const categories = [
-  { id: 1, title: "ELECTRONICS", imageSrc: "/images/asset.png" },
-  { id: 2, title: "ELECTRONICS", imageSrc: "/images/asset.png" },
-  { id: 3, title: "ELECTRONICS", imageSrc: "/images/asset.png" },
-  { id: 4, title: "ELECTRONICS", imageSrc: "/images/asset.png" },
-  { id: 5, title: "ELECTRONICS", imageSrc: "/images/asset.png" },
+  { id: 1, title: "ELECTRONICS", imageSrc: "/images/asset.png" , herf:"/assets" },
+  { id: 2, title: "ELECTRONICS", imageSrc: "/images/asset.png" ,herf:"/assets"  },
+  { id: 3, title: "ELECTRONICS", imageSrc: "/images/asset.png" , herf:"/assets" },
+  { id: 4, title: "ELECTRONICS", imageSrc: "/images/asset.png", herf:"/assets"  },
+  { id: 5, title: "ELECTRONICS", imageSrc: "/images/asset.png",  },
 ];
 
 const Asset = () => {
