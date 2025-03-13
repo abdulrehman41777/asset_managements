@@ -88,7 +88,7 @@ const Signup = () => {
                 </div>
               </div>
 
-              {/* Password */}
+             
               <div className="relative mb-4">
                 <label className="block text-[12px] text-gray-700 mb-1">Password</label>
                 <div className="relative">
@@ -109,7 +109,7 @@ const Signup = () => {
                 </div>
               </div>
 
-              {/* Confirm Password */}
+        
               <div className="relative mb-4">
                 <label className="block text-[12px] text-gray-700 mb-1">Confirm Password</label>
                 <div className="relative">
@@ -130,7 +130,7 @@ const Signup = () => {
                 </div>
               </div>
 
-              {/* Terms & Conditions */}
+     
               <div className="mb-4 flex items-center">
                 <input
                   type="checkbox"

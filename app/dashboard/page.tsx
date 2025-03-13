@@ -42,7 +42,7 @@ const Page = () => {
                 >
                     <Menu className="w-6 h-6 text-gray-700" />
                 </button>
-
+                    
                 <DashboardHeader />
                 <div className="my-10 mx-4 md:mx-8">
                     <MainContent />
